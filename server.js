@@ -54,6 +54,4 @@ function addData(req, res){
     }
     
     pushToProjectData(projectData,newEntry,newEntry);
-    console.log(projectData);
-    //projectData.push(newEntry);
 }
