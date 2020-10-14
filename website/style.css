@@ -8,7 +8,7 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #3905CA;
+    background: #f23557;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
@@ -24,13 +24,7 @@ body{
     background: rgba(59, 74, 107, .4);
 }
 
-.entryHolder{
-    display: block;
-
-}
-
-#holdEntry{
-    display: block;
+#entryHolder{
 
 }
 
@@ -46,9 +40,7 @@ body{
 
 }
 
-.headlineHolder {
-    font-size: 60px;
-    
+.headline {
 
 }
 .title{
@@ -66,8 +58,8 @@ input{
     display:block;
     height: 60px;
     width: 320px;
-    background:#D2C9EB;
-    color: #1100D0;
+    background:#22b2da;
+    color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
@@ -82,17 +74,14 @@ button{
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
-    cursor: pointer;
 }
-
-
 h1{
     font-size: 36px;
 }
 
 textarea{
-    background:#D2C9EB;
-    color: #1100D0;
+    background:#22b2da;
+    color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -105,19 +94,19 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #1100D0; 
+    color: #f0d43a; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #1100D0; 
+    color: #f0d43a; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #1100D0; 
+    color: #f0d43a; 
     font-family: 'Oswald', sans-serif;
 
 } 
