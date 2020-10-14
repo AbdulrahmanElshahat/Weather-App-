@@ -1,9 +1,9 @@
 /* Global Variables */
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-let APIKey= '&APPID=6613ee8430ed01573cc6aea7f860f3e5&units=imperial';
-let url = 'http://api.openweathermap.org/data/2.5/forecast?id=';
+const APIKey= '&APPID=6613ee8430ed01573cc6aea7f860f3e5&units=imperial';
+const url = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 
 let generateButton = document.getElementById('generator');
 generateButton.addEventListener('click', generateResult);
@@ -13,7 +13,7 @@ function generateResult(){
     getWeather(url,ZipCode,APIKey)
     .then(function(data){
         console.log(data);
-        postData('/add', {date:d, temp:data.list[0].main.temp, content:feeling});
+        postData('/add', {date:newDate, temp:data.main.temp, content:feeling});
         updateUI();
     });
 }
@@ -56,9 +56,9 @@ const updateUI = async ()=>{
     try{
         const allData = await request.json();
         console.log(allData);
-        document.getElementById('date').innerHTML = `Date: ${allData['[object Object]']['date']}`;
-        document.getElementById('temp').innerHTML = `tempreture : ${allData['[object Object]']['temp']}`;
-        document.getElementById('content').innerHTML = `I feel : ${allData['[object Object]']['content']}`; 
+        document.getElementById('date').innerHTML = `Date: ${allData['date']}`;
+        document.getElementById('temp').innerHTML = `tempreture : ${allData['temp']}`;
+        document.getElementById('content').innerHTML = `I feel : ${allData['content']}`; 
     } catch(error) {
         console.log('error',error);
         document.getElementById('date').innerHTML = `There Is an Error in requesting Date`;

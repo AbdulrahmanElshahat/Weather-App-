@@ -43,15 +43,8 @@ app.post('/add', addData);
 
 function addData(req, res){
     console.log(req.body);
-    newEntry = {
-        date: req.body.date,
-        temp: req.body.temp,
-        content: req.body.content
-    }
-
-    let pushToProjectData = (obj, probName, probValue)=>{
-        obj[probName] = probValue;
-    }
-    
-    pushToProjectData(projectData,newEntry,newEntry);
+    projectData.date = req.body.date;
+    projectData.temp =  req.body.temp;
+    projectData.content = req.body.content;
+    res.send({msg: "Post Received"});
 }
