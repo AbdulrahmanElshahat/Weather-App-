@@ -37,14 +37,23 @@ function sendData(req,res){
     projectData = {};
 }
 
-app.post('/all', addData);
+
+
+app.post('/add', addData);
 
 function addData(req, res){
     console.log(req.body);
     newEntry = {
         date: req.body.date,
-        remp: req.body.temp,
+        temp: req.body.temp,
         content: req.body.content
     }
-    projectData.push(newEntry);
+
+    let pushToProjectData = (obj, probName, probValue)=>{
+        obj[probName] = probValue;
+    }
+    
+    pushToProjectData(projectData,newEntry,newEntry);
+    console.log(projectData);
+    //projectData.push(newEntry);
 }
